@@ -22,14 +22,11 @@ const FILENAME = "testfile.txt"
 // Reads a file to []byte
 func (c *Coordinates) CreateCoords() []float32 {
 	var nums []float32
-	// var Vectors [][]float32
 
 	file, err := ioutil.ReadFile(FILENAME)
 	if err != nil {
 		log.Fatal("could not read file ->", err)
 	}
-
-	// for all the items in the byte slice, create a Coordinates type grouped in threes.
 
 	// appends ints to a new slice
 	// converts to a two decimal float32, I hope I learn something from this.
@@ -39,19 +36,20 @@ func (c *Coordinates) CreateCoords() []float32 {
 	}
 
 	// Create subslices from nums to create vectors for the vertices.
-	var j int
-	size := 3
-	for i := 0; i < len(nums); i += size {
-		j += size
-		if j > len(nums) {
-			j = len(nums)
-		}
-		// subSlice := nums[i:j]
+	// NOTE: This section may be deleted
+	// var j int
+	// size := 3
+	// for i := 0; i < len(nums); i += size {
+	// 	j += size
+	// 	if j > len(nums) {
+	// 		j = len(nums)
+	// 	}
+	// 	// subSlice := nums[i:j]
 
-		// create a struct with values if the subSlice is equal to len(3)
-		// if len(subSlice) == 3 {
-		// 	Vectors = append(Vectors, subSlice)
-		// }
-	}
+	// 	// create a struct with values if the subSlice is equal to len(3)
+	// 	// if len(subSlice) == 3 {
+	// 	// 	Vectors = append(Vectors, subSlice)
+	// 	// }
+	// }
 	return nums
 }
