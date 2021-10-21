@@ -1,0 +1,1 @@
+this is a test file. I will become a byte string and then become coordinates in GoGL.
